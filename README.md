@@ -10,7 +10,7 @@ This repo will be containing DSA solutions using Javascript. Below are some of t
 6. [Finding frequency](https://github.com/Ruchika30/Data-Structure-and-algorithms-using-javascript/blob/main/6.frequency.js)
 7. [Linear search](https://github.com/Ruchika30/Data-Structure-and-algorithms-using-javascript/blob/main/7.linearSearch.js)
 8. [Binary search](https://github.com/Ruchika30/Data-Structure-and-algorithms-using-javascript/blob/main/8.BinarySearch.js)
-9.Bubble sort
+9. Bubble sort
 10. Selection sort
 11. Insertion sort
 12. Merge sort
