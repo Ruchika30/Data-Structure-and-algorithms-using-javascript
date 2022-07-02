@@ -17,25 +17,25 @@ Good soln(below):
 In 2nd pass,from the previous sum,  remove 2, add 7
 */
 
-const maxSum =(arr, num) =>{
-    let maxSum =0 
-    let tmpSum =0 
+const maxSum = (arr, num) => {
+    let maxSum = 0
+    let tmpSum = 0
 
-    if(arr.length<num)
+    if (arr.length < num)
         return null
 
-    for(let i=0; i< num ;i++){
-        maxSum= maxSum+ arr[i]
+    for (let i = 0; i < num; i++) {
+        maxSum = maxSum + arr[i]
     }
 
     tmpSum = maxSum
 
-    for(let i=num; i < arr.length ;i++){
-        tmpSum= tmpSum + arr[i] - arr[i-num]
+    for (let i = num; i < arr.length; i++) {
+        tmpSum = tmpSum + arr[i] - arr[i - num]
         maxSum = Math.max(tmpSum, maxSum)
     }
 
     return maxSum
 }
 
-console.log(maxSum([2,9,6,7,2,3,4,2,1,3,4,4], 3))
+console.log(maxSum([2, 9, 6, 7, 2, 3, 4, 2, 1, 3, 4, 4], 3))
