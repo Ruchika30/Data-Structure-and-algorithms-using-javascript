@@ -1,26 +1,25 @@
-
-
-
 /* 
+FINDING
+is same as inserting. Just that we have to return 
+the node if u find it
 
-INSERTING a node:
+•Starting at the root
+  - Check if there is a root,if not-we're done searching!
+  - If there is a root,check if the value of the new node is the value we are looking for.
+    If we found it,we're done!
+  - If not,check to see if the value is greater than or less than the value of the root
+  - If it is greater
+      - Check to see if there isanode to the right
+         - If there is,move to that node and repeat these steps
+         - If there is not,we're done searching!
 
-1. Create a new node
-2. Starting at the root
-    - Check if there is a root, if not - then new node becomes root
-    - If there is a root, check if the value of the new node is greater than or less than the value of root
-
-    - If it is greater, 
-        1. Check to see if there is a node on right
-            a. If there is, then move to that node & repeat the steps
-            b. if there is not, then add that node as the right property 
-
-    - If it is less
-        1. Check to see if there is a node on left
-            a. If there is, then move to that node & repeat the steps
-             b. if there is not, then add that node as the left property 
+  - If it is less
+     - Check to see if there isanode to the left
+        - If there is,move to that node and repeat these steps
+        - If there is not,we're done searching!
 
 */
+
 class Node {
     constructor(value) {
         this.value = value
@@ -28,7 +27,6 @@ class Node {
         this.left = null
     }
 }
-
 
 class BinarySearchTree {
     constructor() {
@@ -73,18 +71,42 @@ class BinarySearchTree {
 
         }
     }
-}
 
-//            10
-//      5            13    
-//   2    7      11     16
+    find(value) {
+        if (this.root == null) {
+            return
+        }
+
+        else {
+            let current = this.root
+
+            while (true) {
+                if (value == current.value) {
+                    return current
+                }
+                else if (value > current.value) {
+                    // move right
+                    if (current.right == null) {
+                        return
+                    }
+                    current = current.right
+                }
+                else if (value < current.value) {
+                    // move left
+                    if (current.left == null) {
+                        return
+                    }
+                    current = current.left
+                }
+            }
+
+        }
+    }
+
+}
 
 const tree = new BinarySearchTree()
 tree.insert(10)
 tree.insert(5)
 tree.insert(13)
-tree.insert(2)
-tree.insert(7)
-tree.insert(11)
-tree.insert(16)
-console.log("tree--", JSON.stringify(tree))
+console.log("hey---", tree.find(13))
